@@ -4,32 +4,42 @@
 //await暫停函式 需要 async function包起來，因為需要一個範圍
 // 在 async function 裡遇到 await 就暫停到async function裡的範圍
 
-let doWork = function(job,timer){
-      return new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-          resolve(`完成${job}`);
-        },timer)
-      });
-    };
-    // await 必須在放在async函式裡
-    async function main(){
-        let result1 = await doWork("刷牙牙",3000)
-    }
-    main()
+let doWork = function (job, timer) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(`完成${job}`);
+        }, timer)
+    });
+};
+// await 必須在放在async函式裡
+// async function main() {
+//     let result1 = await doWork("刷牙牙", 3000)
+// }
+// main()
 
     //IFEE 立即執行
-    (async=>())
+    (async() => {
+        try{
+            let result = await doWork("刷牙牙", 3000);
+            let time = new Date();
+            console.log(`${result} at ${time}`);
+        }catch(err){
+            console.error(err,"錯了呦!");
+        }
+    })();
 
 
-    doWork("刷牙牙",3000)
-    .then((result)=>{
-      let time = new Date();
-      console.log(`${result} at ${time}`);
-      return doWork("吃飯飯",2000);
-    })
-    
-    
-    
+
+//原本promise
+// doWork("刷牙牙", 3000)
+//     .then((result) => {
+//         let time = new Date();
+//         console.log(`${result} at ${time}`);
+//         return doWork("吃飯飯", 2000);
+//     })
+
+
+
     // .then((result)=>{
     //   let time = new Date();
     //   console.log(`${result} at ${time}`);

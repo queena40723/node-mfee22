@@ -1,6 +1,6 @@
 const { readFile } = require("fs");
 let readfilePromise = new Promise((resolve,reject)=>{
-    readFile("test.txt", "utf-8", (err, data) => {
+    readFile("text.txt", "utf-8", (err, data) => {
         if (err) {
           reject(err);
           return;
@@ -20,8 +20,19 @@ async function main(){
         
 }
 //例二
-// async function main(){
-//     let result1 = await readfilePromise
-//     console.log(result1)
-// }
+async function main(){
+    let result1 = await readfilePromise
+    console.log(result1)
+}
 main();  
+
+//IFEE
+(async()=>{
+    try {
+        let result1 = await readfilePromise
+        console.log(result1)
+    }
+    catch(err){
+        console.log('catch one error', err);
+    }
+})();
