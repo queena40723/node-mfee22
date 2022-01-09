@@ -15,13 +15,13 @@ async function main(){
         console.log(result1)
     }
     catch(err){
-        console.log('catch', err);
+        console.log('catch one error', err);
     }
         
 }
 //例二
-async function main(){
-    let result1 = await readfilePromise
-    console.log(result1)
-}
+// async function main(){
+//     let result1 = await readfilePromise
+//     console.log(result1)
+// }
 main();  
