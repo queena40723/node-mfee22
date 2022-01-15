@@ -17,6 +17,6 @@ const { readFile } = require("fs/promises");
                   );
                   console.log(response.data);
                 } catch (e) {
-                  console.error(e);
+                  console.error(e);clear
                 }
               })();

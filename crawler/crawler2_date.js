@@ -6,11 +6,13 @@ const { readFile } = require("fs/promises");
     try {
         let Today = new Date();
         let month = Today.getMonth()
+        //month從0開始
         if(month<10){
             month = `0${Today.getMonth()+1}`
         }else{
             month = `${Today.getMonth()+1}`
         }
+        
         let queryDate=`${Today.getFullYear()}${month}${Today.getDate()}`
         let stockNo = await readFile("stock.txt", "utf-8");
         let response = await axios.get(
