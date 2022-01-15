@@ -3,6 +3,7 @@
 // await/async是promise的語法糖
 //await暫停函式 需要 async function包起來，因為需要一個範圍
 // 在 async function 裡遇到 await 就暫停到async function裡的範圍
+//try...catch
 
 let doWork = function (job, timer) {
     return new Promise((resolve, reject) => {

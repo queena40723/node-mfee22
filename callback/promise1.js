@@ -50,7 +50,8 @@
 //   .catch((err) => {
 //       console.log(`${result}`)
 //   })
-/////
+
+///// 測試中
   let demoPromise = function (a, b, timer) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
