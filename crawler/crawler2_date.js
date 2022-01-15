@@ -5,12 +5,12 @@ const { readFile } = require("fs/promises");
 (async()=>{
     try {
         let Today = new Date();
-        let month = Today.getMonth()
+        let month = Today.getMonth()+1
         //month從0開始
         if(month<10){
-            month = `0${Today.getMonth()+1}`
+            month = `0${Today.getMonth()}`
         }else{
-            month = `${Today.getMonth()+1}`
+            month = Today.getMonth()
         }
         
         let queryDate=`${Today.getFullYear()}${month}${Today.getDate()}`
